@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;500;600&display=swap');
+
+$bg-color: #F2FBE0;
+$main-color: #5E9859;
+$dark-color: #25291C;
+$black-color: #1A1E1B;
+$red-color: #FF101F;
+$blue-color: #29339B;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+    background-color: $bg-color;
+    color: $black-color;
+}
+
+.dashboard {
+    display: grid; 
+    grid-template-columns: 0.75fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "nav main main main side"
+      "nav main main main side"
+      "nav main main main side"; 
+    
+    .nav { 
+        grid-area: nav; 
+        background-color: $dark-color;
+        color: $bg-color;
+        height: 100vh;
+        box-shadow: inset -10px -1px 16px -2px #000;
+        position: sticky;
+
+        ul {
+            margin: 50% 2rem;
+            list-style-type: none;
+        }
+        
+    }
+    .main { 
+        grid-area: main; 
+
+        h1 {
+            color: $main-color;
+            margin: 1rem;
+        }
+        .resumo {
+            #resumo_titulo {
+                margin: .5rem 1rem
+            }
+            .blocos {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+    
+                #gastos, #ganhos, #lucro {
+                    padding: 1rem;
+                    border-radius: 10px;
+                    color: #D6F5D9;
+                }
+    
+                #gastos {
+                    background-color: $red-color;
+                }
+    
+                #ganhos {
+                    background-color: $main-color;
+                }
+    
+                #lucro {
+                    background-color: $blue-color;
+                }
+            }
+        }
+        
+    }
+
+    .side { 
+        grid-area: side; 
+    }
+}
+
+
+
